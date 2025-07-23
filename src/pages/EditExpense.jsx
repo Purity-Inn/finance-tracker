@@ -141,7 +141,6 @@ const EditExpense = () => {
       </form>
     </div>
   );
-  );
 };
 
 export default EditExpense;

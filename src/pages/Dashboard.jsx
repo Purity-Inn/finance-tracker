@@ -8,12 +8,7 @@ import {
   Cell,
   Tooltip,
   Legend,
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid
+  ResponsiveContainer
 } from 'recharts';
 
 export default function Dashboard() {

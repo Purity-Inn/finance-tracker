@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { db } from '../firebase';
+import React, { useState, useEffect } from 'react';
+import { db, auth } from '../firebase';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth';
 
 export default function AddExpense() {
   const [title, setTitle] = useState('');
@@ -9,10 +10,27 @@ export default function AddExpense() {
   const [category, setCategory] = useState('');
   const [note, setNote] = useState('');
   const [date, setDate] = useState('');
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      if (!currentUser) {
+        navigate('/login');
+      }
+    });
+    return () => unsubscribe();
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!user) {
+      alert('Please log in to add expenses.');
+      navigate('/login');
+      return;
+    }
 
     if (!title || !amount || !category || !date) {
       alert('Please fill in all required fields.');
@@ -26,7 +44,8 @@ export default function AddExpense() {
         category,
         note,
         date: Timestamp.fromDate(new Date(date)),
-        createdAt: Timestamp.now()
+        createdAt: Timestamp.now(),
+        userId: user.uid
       });
 
       // Reset form
@@ -39,7 +58,7 @@ export default function AddExpense() {
       navigate('/expenses');
     } catch (error) {
       console.error('Error adding expense:', error);
-      alert('Error saving expense.');
+      alert('Error saving expense. Please try again.');
     }
   };
 
