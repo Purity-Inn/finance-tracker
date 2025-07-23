@@ -69,13 +69,6 @@ function App() {
       </div>
     </Router>
   );
-              <Route path="/register" element={<Register />} />
-            </>
-          )}
-        </Routes>
-      </div>
-    </Router>
-  );
 }
 
 export default App;

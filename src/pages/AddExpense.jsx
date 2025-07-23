@@ -118,50 +118,5 @@ export default function AddExpense() {
       </form>
     </div>
   );
-          />
-        </label>
-        <br />
-
-        <label>
-          Category:
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            required
-          >
-            <option value="">Select</option>
-            <option value="Food">Food</option>
-            <option value="Transport">Transport</option>
-            <option value="School">School</option>
-            <option value="Rent">Rent</option>
-            <option value="Other">Other</option>
-          </select>
-        </label>
-        <br />
-
-        <label>
-          Date:
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-
-        <label>
-          Note:
-          <textarea
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-          />
-        </label>
-        <br />
-
-        <button type="submit">Add Expense</button>
-      </form>
-    </div>
-  );
 }
 
