@@ -16,7 +16,7 @@ A modern, responsive personal finance tracker built with React and Firebase. Tra
 
 Visit the live application: [https://financetracker-eed50.web.app](https://financetracker-eed50.web.app)
 ##  video  Demo
-[https://financetracker-eed50.web.app](14batWH3L5S4d1DOXu6rjlXaM777r1uf6)
+[video demo](https://drive.google.com/file/d/14batWH3L5S4d1DOXu6rjlXaM777r1uf6/view?usp=sharing)
 
 ## 🛠️ Technologies Used
 
