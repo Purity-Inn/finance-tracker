@@ -12,9 +12,11 @@ A modern, responsive personal finance tracker built with React and Firebase. Tra
 - **Responsive Design**: Beautiful gradient UI that works on all devices
 - **Budget Insights**: Track spending patterns and financial trends
 
-## 🚀 Live Demo
+##  Live Demo
 
 Visit the live application: [https://financetracker-eed50.web.app](https://financetracker-eed50.web.app)
+##  video  Demo
+[https://financetracker-eed50.web.app](14batWH3L5S4d1DOXu6rjlXaM777r1uf6)
 
 ## 🛠️ Technologies Used
 
